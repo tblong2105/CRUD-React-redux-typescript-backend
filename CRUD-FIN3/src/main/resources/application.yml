@@ -1,0 +1,42 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    password: 123456
+    url: jdbc:mysql://localhost:3306/crudfin3
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: false
+  mail:
+    host: smtp.gmail.com
+    password: password
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          starttls:
+            enable: true
+          timeout: 5000
+          writetimeout: 5000
+    username: username@gmail.com
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 880143196792-e95ijhml9bs6bkq1v453u5go1pglqubr.apps.googleusercontent.com
+            clientSecret: LQw6Zq6gZocxSB8aPTYSMEhq
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+            - email
+            - profile
+
